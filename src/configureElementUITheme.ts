@@ -2,6 +2,7 @@ import { createMuiTheme } from '@material-ui/core/styles'
 
 const configureTheme = createMuiTheme({
   palette: {
+    type: 'dark',
   },
   typography: {
     useNextVariants: true,
