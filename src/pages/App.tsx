@@ -1,12 +1,12 @@
 import React from 'react'
 import withRoot from '../withRoot'
-import MusicControlBar from '../components/MusicControlBar'
+import TabBar from '../components/TabBar';
 
 const App = () => {
   return (
-    <React.Fragment>
-      <MusicControlBar />
-    </React.Fragment>
+    <div>
+      <TabBar/>
+    </div>
   )
 }
 
