@@ -1,11 +1,9 @@
 import React from 'react'
-import AppBar from '@material-ui/core/AppBar'
+import styled from 'styled-components';
 
 const MusicControlBar = () => {
   return (
-    <AppBar position="absolute">
-      
-    </AppBar>
+    <div></div>
   )
 }
 
