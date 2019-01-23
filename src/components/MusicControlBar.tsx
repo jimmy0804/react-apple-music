@@ -1,9 +1,11 @@
 import React from 'react'
-import styled from 'styled-components';
+import Grid from '@material-ui/core/Grid';
 
 const MusicControlBar = () => {
   return (
-    <div></div>
+    <Grid container spacing={0}>
+      
+    </Grid>
   )
 }
 

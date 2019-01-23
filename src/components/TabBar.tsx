@@ -5,7 +5,9 @@ import BottomNavigation from '@material-ui/core/BottomNavigation'
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import {
   LibraryMusic,
-  MusicNote
+  MusicNote,
+  AccountCircle,
+  Settings
 } from '@material-ui/icons';
 
 const useStyles = makeStyles({
@@ -23,6 +25,16 @@ const navActions = [
     id: getRandomHash(),
     label: 'Browse',
     icon: <MusicNote />
+  },
+  {
+    id: getRandomHash(),
+    label: 'Account',
+    icon: <AccountCircle />
+  },
+  {
+    id: getRandomHash(),
+    label: 'Settings',
+    icon: <Settings />
   }
 ]
 
