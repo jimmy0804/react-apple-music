@@ -1,12 +1,10 @@
 import React from 'react'
 import withRoot from '../withRoot'
-import TabBar from '../components/TabBar';
+import TabBarLayout from '../layouts/TabBarLayout'
 
 const App = () => {
   return (
-    <div>
-      <TabBar/>
-    </div>
+    <TabBarLayout />
   )
 }
 
