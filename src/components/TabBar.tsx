@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/styles';
+import { getRandomHash } from '../utils/helper'
 import BottomNavigation from '@material-ui/core/BottomNavigation'
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import {
@@ -14,10 +15,12 @@ const useStyles = makeStyles({
 
 const navActions = [
   {
+    id: getRandomHash(),
     label: 'Library',
     icon: <LibraryMusic />
   },
   {
+    id: getRandomHash(),
     label: 'Browse',
     icon: <MusicNote />
   }
@@ -38,6 +41,7 @@ const TabBar = () => {
     >
       {navActions.map((value, index) => {
         return  <BottomNavigationAction
+                  key={value.id}
                   label={value.label}
                   icon={value.icon}
                 />
