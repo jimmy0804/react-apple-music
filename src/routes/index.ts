@@ -8,10 +8,12 @@ import LibraryComponent from '../pages/library/LibraryComponent'
 const routes: RouteConfig[] = [
   {
     path: '/',
+    isExact: true,
     component: LibraryComponent
   },
   {
     path: '/settings',
+    isExact: true,
     component: SettingsComponent
   }
 ]

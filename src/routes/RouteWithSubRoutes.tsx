@@ -6,6 +6,7 @@ const RouteWithSubRoutes = (route: RouteConfig) => {
   return (
     <Route
       path={route.path}
+      exact={route.isExact}
       render={props => (
         <route.component {...props} routes={route.routes} />
       )}
