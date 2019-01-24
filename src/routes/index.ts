@@ -1,5 +1,4 @@
-import React from 'react'
-import { Route } from "react-router-dom";
+import { Redirect } from 'react-router-dom'
 import { RouteConfig } from './RouteConfig'
 
 import SettingsComponent from '../pages/settings/SettingsComponent'

@@ -1,6 +1,6 @@
 export interface RouteConfig {
   path: string;
   component: any;
-  isExact: boolean;
+  isExact?: boolean;
   routes?: RouteConfig[];
 }

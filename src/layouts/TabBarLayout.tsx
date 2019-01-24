@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import TabBar from '../components/TabBar'
+import TabBar from '../components/TabBarContainer'
 import MusicControlBar from '../components/MusicControlBar'
 
 import routes from '../routes/index'
