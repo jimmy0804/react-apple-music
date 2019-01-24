@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/styles';
 import { getRandomHash } from '../utils/helper'
 import BottomNavigation from '@material-ui/core/BottomNavigation'
@@ -51,13 +52,13 @@ const TabBar = () => {
       showLabels
       className={classes.root}
     >
-      {navActions.map((value, index) => {
-        return  <BottomNavigationAction
-                  key={value.id}
-                  label={value.label}
-                  icon={value.icon}
-                />
-      })}
+      {navActions.map((value, index) => (
+        <BottomNavigationAction
+          key={value.id}
+          label={value.label}
+          icon={value.icon}
+        />
+      ))}
     </BottomNavigation>
   )
 }
