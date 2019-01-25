@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from "prop-types";
 import { Route, Link } from 'react-router-dom'
+import { withRouter } from "react-router";
 import { makeStyles } from '@material-ui/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation'
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
@@ -28,7 +29,7 @@ const navActions: NacAction[] = [
     id: 'library',
     label: 'Library',
     icon: <LibraryMusic />,
-    path: '/',
+    path: '/library',
   },
   // {
   //   id: getRandomHash(),
@@ -52,30 +53,14 @@ export interface BottomNavigationActionLinkProps {
 
 }
 
-// const BottomNavigationActionLink = () => {
-//   return (
-//     <Route
-//       path={to}
-//       exact={activeOnlyWhenExact}
-//       children={({ match }) => (
-//         <div className={match ? "active" : ""}>
-//           {match ? "> " : ""}
-//           <Link to={to}>{label}</Link>
-//         </div>
-//       )}
-//     />
-//   );
-// }
-
 const TabBar = (props: any) => {
-  console.log(props)
   const classes = useStyles()
 
-  const [value, setValue] = useState('/')
-  useEffect(() => {
-    const startValue = props.location.pathname
-    setValue(startValue)
-  }, [])
+  const [value, setValue] = useState('/library')
+  // useEffect(() => {
+  //   const startValue = props.location.pathname
+  //   setValue(startValue)
+  // })
 
   return (
     <BottomNavigation
@@ -101,4 +86,4 @@ const TabBar = (props: any) => {
   )
 }
 
-export default TabBar
+export default withRouter(TabBar)

@@ -1,10 +1,13 @@
 import React from 'react'
 import withRoot from '../withRoot'
 import TabBarLayout from '../layouts/TabBarLayout'
+import MainRoutes from './MainRoutes'
 
 const App = () => {
   return (
-    <TabBarLayout />
+    <TabBarLayout>
+      <MainRoutes />
+    </TabBarLayout>
   )
 }
 
