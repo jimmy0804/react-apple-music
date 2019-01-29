@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from "prop-types";
-import { Route, Link } from 'react-router-dom'
+import { Link, RouteComponentProps } from 'react-router-dom'
 import { withRouter } from "react-router";
 import { makeStyles } from '@material-ui/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation'
@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 });
 
 export interface NacAction {
-  id: string | number;
+  id: string;
   label: string;
   icon: JSX.Element;
   path: string;
@@ -31,16 +31,18 @@ const navActions: NacAction[] = [
     icon: <LibraryMusic />,
     path: '/library',
   },
-  // {
-  //   id: getRandomHash(),
-  //   label: 'Browse',
-  //   icon: <MusicNote />
-  // },
-  // {
-  //   id: getRandomHash(),
-  //   label: 'Account',
-  //   icon: <AccountCircle />
-  // },
+  {
+    id: 'browse',
+    label: 'Browse',
+    icon: <MusicNote />,
+    path: '/browse'
+  },
+  {
+    id: 'account',
+    label: 'Account',
+    icon: <AccountCircle />,
+    path: '/account'
+  },
   {
     id: 'settings',
     label: 'Settings',
@@ -49,18 +51,14 @@ const navActions: NacAction[] = [
   }
 ]
 
-export interface BottomNavigationActionLinkProps {
-
-}
-
-const TabBar = (props: any) => {
+const TabBar = (props: RouteComponentProps) => {
   const classes = useStyles()
 
-  const [value, setValue] = useState('/library')
-  // useEffect(() => {
-  //   const startValue = props.location.pathname
-  //   setValue(startValue)
-  // })
+  const initialPath: string = props.location.pathname
+  const initialState = navActions.find(value => (
+    initialPath.includes(value.path)
+  ))
+  const [value, setValue] = useState(initialState ? initialState.id : 'library')
 
   return (
     <BottomNavigation
@@ -77,7 +75,7 @@ const TabBar = (props: any) => {
             <Link to={navAction.path} {...props} />
           )}
           key={navAction.id}
-          value={navAction.path}
+          value={navAction.id}
           label={navAction.label}
           icon={navAction.icon}
         />
