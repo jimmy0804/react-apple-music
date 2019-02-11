@@ -14,7 +14,11 @@ import {
 
 const useStyles = makeStyles({
   root: {
+    height: 50
   },
+  action: {
+    paddingBottom: 4
+  }
 });
 
 export interface NacAction {
@@ -78,6 +82,7 @@ const TabBar = (props: RouteComponentProps) => {
           value={navAction.id}
           label={navAction.label}
           icon={navAction.icon}
+          className={classes.action}
         />
       ))}
     </BottomNavigation>
