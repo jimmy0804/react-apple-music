@@ -1,6 +1,6 @@
 import React from 'react'
 import withRoot from '../withRoot'
-import TabBarLayout from '../Layouts/TabBarLayout'
+import TabBarLayout from '../layouts/TabBarLayout'
 import MainRoutes from './MainRoutes'
 
 const App = () => {
